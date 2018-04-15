@@ -8,8 +8,11 @@
 
   $User = new User($_SESSION['user_id']);
 
+  $connect = mysqli_connect("localhost", "root", "", "project");
+  $query = "SELECT * FROM requests WHERE user_id = $User->user_id;";
+  $result = mysqli_query($connect, $query);
+  
 
-  $query = "SELECT user_id, Username, email, first_name, surname FROM requests";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,15 +65,14 @@
       </div>
     </form>
 
+    <div class="new_table">
     <div class="table-responsive">
             <table id="editable_table" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>user_id</th>
-                  <th>Username</th>
-                  <th>email</th>
-                  <th>first_name</th>
-                  <th>surname</th>
+                  <th>request_id</th>
+                  <th>submission_date</th>
+                  <th>status</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,11 +81,9 @@
                 {
                   echo '
                   <tr>
-                    <td>'.$row["user_id"].'</td>
-                    <td>'.$row["Username"].'</td>
-                    <td>'.$row["email"].'</td>
-                    <td>'.$row["first_name"].'</td>
-                    <td>'.$row["surname"].'</td>
+                    <td>'.$row["request_id"].'</td>
+                    <td>'.$row["submission_date"].'</td>
+                    <td>'.$row["status"].'</td>
                   </tr>
                   ';
                 }
@@ -91,6 +91,7 @@
               </tbody>
             </table>
           </div>
+        </div>
 
 
     <form class="form2" enctype="multipart/form-data">
