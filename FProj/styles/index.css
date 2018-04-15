@@ -1,0 +1,25 @@
+img {
+	width: 210px;
+	height: 150px;
+	float: left;
+
+}
+.goldline {
+    border-style: solid;
+    border-width: 0 0 5px 0;
+    border-image-source: linear-gradient(100deg,#a38b46,#a38b46,#bba461,#bba461,#bba461,rgba(187,164,97,.5));
+    border-image-slice: 1;
+}
+.btn-primary {
+	background-color: #1a2a4f;
+}
+
+
+.container2 {
+	background-color: white;
+}
+
+.uk-button-default {
+	background-color: #1a2a4f;
+	color: white;
+}

@@ -1,0 +1,140 @@
+.logout {
+	float: right;
+}
+
+.well {
+	background-color: #1a2a4f;
+	color: white;
+}
+
+.form1 {
+	
+	background-color: #F0F8FF;
+	padding-bottom: 30px;
+}
+
+.glyphicon {
+	color: #1a2a4f;
+	width: 10px;
+	height: 10px;
+	float: right;
+	margin-top: 6px;
+	padding-right: 20px;
+}
+
+form.form1 h5 {
+	color: #1a2a4f;
+	float: right;
+}
+
+.form2 {
+	padding-right: 4%;
+	padding-left: 4%;
+	background-color: #F0F8FF;
+	padding-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.btn-group {
+	color: #1a2a4f;
+	padding-left: 10px;
+}
+
+.btn4 {
+	background-color: #1a2a4f;
+	color: white;
+	
+}
+
+.btn5 {
+	background-color: #1a2a4f;
+	color: white;
+}
+
+.btn6 {
+	background-color: #1a2a4f;
+	color: white;
+}
+
+.btn7 {
+	background-color: #1a2a4f;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.Req_id {
+	float: left;
+	margin-top: 15px;
+}
+
+h4 {
+	color: #1a2a4f;
+
+}
+
+.req_header { 
+	padding-left: 12px;
+
+ }
+
+ form.form2 h5 {
+ 	float: left;
+ }
+
+ .form3 {
+	padding-right: 4%;
+	padding-left: 4%;
+	background-color: #F0F8FF;
+	padding-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 4%;
+}
+
+.ror_header {
+	padding-top: 10px
+
+}
+
+.logout {
+	float: right;
+	background-color: #1a2a4f;
+	color: white;
+
+}
+
+.form4 {
+	padding-right: 4%;
+	padding-left: 4%;
+	background-color: #F0F8FF;
+	padding-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 10%;
+}
+
+.btn8 {
+	background-color: #1a2a4f;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.btn9 {
+	background-color: #1a2a4f;
+	color: white;
+	margin-bottom: 10px;
+
+}
+
+div.hidden
+{
+   display: none
+}
+
+.btn4 {
+	float: right;
+}
+
+
+.uk-container {
+	padding-bottom: 10px;
+}
