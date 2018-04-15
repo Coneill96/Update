@@ -14,13 +14,14 @@ class User {
 	public $reg_time;
 	public $first_name;
 	public $surname;
+	public $email;
 
 	public function __construct(int $user_id) {
 	$this->con = DB::getConnection();
 
 	$user_id = Filter::Int( $user_id );
 
-	$user = $this->con->prepare("SELECT user_id, Username, reg_time, first_name, surname, password FROM users WHERE user_id = :user_id LIMIT 1");
+	$user = $this->con->prepare("SELECT user_id, Username, reg_time, first_name, surname, email, password FROM users WHERE user_id = :user_id LIMIT 1");
 	$user->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 	$user->execute();
 
@@ -28,10 +29,13 @@ class User {
 		$user = $user->fetch(PDO::FETCH_OBJ);
 
 		$this->Username 	= (string) $user->Username;
-		$this->user_id 		= (int) $user->user_id;
+		$this->user_id 		= (int)    $user->user_id;
 		$this->reg_time		= (string) $user->reg_time;
 		$this->first_name	= (string) $user->first_name;
 		$this->surname		= (string) $user->surname;
+		$this->email		= (string) $user->email;
+
+
 	} else {
 
 		header("Location: logout.php"); exit;

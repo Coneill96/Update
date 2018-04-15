@@ -7,8 +7,9 @@
   Page::ForceLogin();
 
   $User = new User($_SESSION['user_id']);
-  
 
+
+  $query = "SELECT user_id, Username, email, first_name, surname FROM requests";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,8 +49,7 @@
 
         </div>
         <div class="col-sm-3">
-          <h5>Course Name:</h5>
-
+          <h5>Email: <?php echo $User->email; ?></h5>
         </div>
       </div>
       <div class="row">
@@ -61,6 +61,37 @@
         </div>
       </div>
     </form>
+
+    <div class="table-responsive">
+            <table id="editable_table" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>user_id</th>
+                  <th>Username</th>
+                  <th>email</th>
+                  <th>first_name</th>
+                  <th>surname</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                while($row = mysqli_fetch_array($result))
+                {
+                  echo '
+                  <tr>
+                    <td>'.$row["user_id"].'</td>
+                    <td>'.$row["Username"].'</td>
+                    <td>'.$row["email"].'</td>
+                    <td>'.$row["first_name"].'</td>
+                    <td>'.$row["surname"].'</td>
+                  </tr>
+                  ';
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
+
 
     <form class="form2" enctype="multipart/form-data">
       <div class="row">
@@ -76,14 +107,6 @@
     <br>
     <h4 id="form"></h4>
     <div id="New_form" class="hidden">
-      <div class="row">
-        <div class="col-sm-6">
-          <h5 class="Req_id">Request ID: </p></h5>
-        </div>
-        <div class="col-sm-6">
-          <h5 class="Req_id">Creation Date:</h5>
-        </div>
-      </div>
     <h3>Assessments</h3>
     <div class="row">
       <div class="col-sm-5">
@@ -173,10 +196,11 @@
 
     <button type="submit" class="btn btn-primary btn9">Submit</button> 
     </form>
-    <div class="row">
-      <div id="success"></div>
-    <div id="output"></div>
-    </div>    
+  </div>
+
+  
+    
+      
       
     <br></br>
     
