@@ -1,6 +1,6 @@
 <?php
 $connect = mysqli_connect("localhost", "root", "", "project");
-$query = "SELECT user_id, Username, email, first_name, surname FROM users";
+$query = "Select users.Username, requests.request_id, requests.submission_date, reason_for_request .d_o_c, reason_for_request .d_a_t , reason_for_request .evidence, reason_for_request.statement, assessment.ass_name, assessment.due_date, assessment.preferred_outcome, assessment.p_e_d, requests.status From Requests JOIN reason_for_request JOIN assessment JOIN users ";
 $result = mysqli_query($connect, $query);
 ?>
 <!DOCTYPE html>
@@ -31,11 +31,11 @@ $result = mysqli_query($connect, $query);
             <table id="editable_table" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>user_id</th>
+                  <th>request_id</th>
+                  <th>submission_date</th>
+                  <th>status</th>
                   <th>Username</th>
-                  <th>email</th>
-                  <th>first_name</th>
-                  <th>surname</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -44,11 +44,7 @@ $result = mysqli_query($connect, $query);
                 {
                   echo '
                   <tr>
-                    <td>'.$row["user_id"].'</td>
-                    <td>'.$row["Username"].'</td>
-                    <td>'.$row["email"].'</td>
-                    <td>'.$row["first_name"].'</td>
-                    <td>'.$row["surname"].'</td>
+                  
                   </tr>
                   ';
                 }
